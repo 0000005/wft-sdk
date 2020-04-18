@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WftClient {
-//    private static final String API_HOST="http://api.wangfengta.com";
-    private static final String API_HOST="http://127.0.0.1:8080";
+    private static final String API_HOST="http://api.wangfengta.com";
+//    private static final String API_HOST="http://127.0.0.1:8080";
     private static String SECRET_KEY;
     private static WftClient wftClient;
     private WftClient(){ }
