@@ -34,14 +34,15 @@ public class WftClient {
         String path="/api/alarm";
         try
         {
-            params.put("secretKey",SECRET_KEY);
-            params.put("appCode",appId);
-            params.put("templateCode",templateId);
+            Map<String,String> alertParams = new HashMap<String, String>(20);
+            alertParams.put("secretKey",SECRET_KEY);
+            alertParams.put("appCode",appId);
+            alertParams.put("templateCode",templateId);
             if(params!=null&&!params.isEmpty())
             {
-                params.put("params",JsonUtil.toJson(params));
+                alertParams.put("params",JsonUtil.toJson(params));
             }
-            String resultStr=HttpUtil.postForm(API_HOST+path,params);
+            String resultStr=HttpUtil.postForm(API_HOST+path,alertParams);
             Result alarmResult=JsonUtil.fromJson(resultStr,Result.class);
             return alarmResult;
         }
